@@ -15,39 +15,103 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdn.datatables.net/v/bs5/dt-1.13.6/datatables.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.datatables.net/v/bs5/dt-1.13.6/datatables.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <!-- Inicio del navbar con fondo blanco -->
+      <a class="navbar-brand" href="#">
+        <img src="./imagenes/logomuni.png" alt="Logo" style="
+        width: auto;
+        height: 45px;"/>
+      </a>
+      <!-- Logo en la esquina superior izquierda -->
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+        <!-- Botón de hamburguesa para dispositivos móviles -->
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- Contenedor de los elementos de navegación -->
+        <ul class="navbar-nav ml-auto">
+          <!-- Lista de elementos de navegación (menú) -->
+          <li class="nav-item dropdown">
+            <!-- Elemento de lista para un menú desplegable -->
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i class="fa fa-user"></i>
+              Nombre de Usuario
+              <!-- Nombre del usuario (texto del enlace) -->
+            </a>
+            <div
+              class="dropdown-menu dropdown-menu-right"
+              aria-labelledby="navbarDropdown"
+            >
+              <!-- Menú desplegable -->
+              <a class="dropdown-item" href="#">Salir</a>
+              <!-- Opción de menú: Salir -->
+              <a class="dropdown-item" href="#">Cambiar Contraseña</a>
+              <!-- Opción de menú: Cambiar Contraseña -->
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <div class="container-body">
       <div class="button-filtro">
         <button>Filtro</button>
       </div>
-      <div class="table-responsive">
+      <div class="tabla-responsiva">
         <table>
-            <thead>
-                <tr>
-                    <th>Columna 1</th>
-                    <th>Columna 2</th>
-                    <th>Columna 3</th>
-                    <th>Columna 4</th>
-                    <th>Columna 5</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Dato 1.1</td>
-                    <td>Dato 1.2</td>
-                    <td>Dato 1.3</td>
-                    <td>Dato 1.4</td>
-                    <td>Dato 1.5</td>
-                </tr>
-                <tr>
-                    <td>Dato 2.1</td>
-                    <td>Dato 2.2</td>
-                    <td>Dato 2.3</td>
-                    <td>Dato 2.4</td>
-                    <td>Dato 2.5</td>
-                </tr>
-            </tbody>
+          <thead>
+            <tr>
+              <th>Columna 1</th>
+              <th>Columna 2</th>
+              <th>Columna 3</th>
+              <th>Columna 4</th>
+              <th>Columna 5</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dato 1.1</td>
+              <td>Dato 1.2</td>
+              <td>Dato 1.3</td>
+              <td>Dato 1.4</td>
+              <td>Dato 1.5</td>
+            </tr>
+            <tr>
+              <td>Dato 2.1</td>
+              <td>Dato 2.2</td>
+              <td>Dato 2.3</td>
+              <td>Dato 2.4</td>
+              <td>Dato 2.5</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>

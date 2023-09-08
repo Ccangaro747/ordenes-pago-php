@@ -13,6 +13,12 @@ body {
   padding: 0;
   width: 100%;
   display: flex;
+  flex-direction: column;
+}
+
+.navbar-brand img {
+  max-height: 55px;
+  width: 100%;
 }
 
 .container-body {
@@ -26,7 +32,7 @@ body {
   justify-content: space-evenly;
 }
 .button-filtro button {
-  background-color: var(--verde-oscuro);
+  background-color: var(--gris);
   color: white;
   padding: 10px 20px;
   border: none;
@@ -42,7 +48,7 @@ body {
   background-color: #2980b9;
 }
 
-.table-responsive {
+.tabla-responsiva {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -50,19 +56,19 @@ body {
   bottom: 30px;
   overflow-x: auto;
 }
-.table-responsive table {
+.tabla-responsiva table {
   width: 95%;
   border-collapse: collapse;
 }
-.table-responsive table tr:nth-child(even) {
+.tabla-responsiva table tr:nth-child(even) {
   background-color: #f2f2f2;
 }
-.table-responsive table th {
+.tabla-responsiva table th {
   background-color: var(--gris);
   color: white;
 }
-.table-responsive table th,
-.table-responsive table td {
+.tabla-responsiva table th,
+.tabla-responsiva table td {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
