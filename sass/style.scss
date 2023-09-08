@@ -1,8 +1,4 @@
-:root {
-  --gris: #777372;
-  --verde: #bed630;
-  --verde-oscuro: #77bf43;
-}
+@import "variables.scss";
 
 * {
   font-family: "Istok Web", sans-serif;
