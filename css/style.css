@@ -69,7 +69,8 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  position: absolute;
+  padding-top: 20px;
+  position: inherit;
   bottom: 30px;
   overflow-x: auto;
 }
@@ -81,8 +82,8 @@ body {
   background-color: #f2f2f2;
 }
 .tabla-responsiva table th {
-  background-color: var(--gris);
-  color: white;
+  background-color: var(--celeste);
+  color: #505050;
 }
 .tabla-responsiva table th,
 .tabla-responsiva table td {
@@ -134,7 +135,7 @@ body {
   #filterForm label {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    height: 30px;
+    height: 32px;
     font-size: 13px;
     justify-items: start;
   }
@@ -157,10 +158,6 @@ body {
   #boton-filtrar button {
     padding: 7px 15px;
     width: 40%;
-  }
-  .tabla-responsiva {
-    padding-top: 20px;
-    position: inherit;
   }
 }
 
