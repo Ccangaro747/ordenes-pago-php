@@ -7,7 +7,6 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <title>Sistema de pago</title>
-    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,18 +23,15 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
-    <link rel="icon" href="/imagenes/logo-2.png">
+    <link rel="icon" href="/imagenes/logo-2.png" />
   </head>
+
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <!-- Inicio del navbar con fondo blanco -->
-      <a class="navbar-brand" href="#">
-        <img
-          src="./imagenes/logomuni.png"
-          alt="Logo"
-          style="width: auto; height: 45px"
-        />
-      </a>
+      <a class="navbar-brand" href="#"
+        ><img src="./imagenes/logomuni.png" alt="Logo"
+      /></a>
       <!-- Logo en la esquina superior izquierda -->
 
       <button
@@ -84,10 +80,11 @@
         </ul>
       </div>
     </nav>
-
     <div class="contenedor">
       <div class="contenedor-button">
-        <button>Volver</button>
+        <button>
+          <i class="fa-solid fa-arrow-left"></i>
+          Volver</button>
       </div>
 
       <form id="filterForm">
@@ -133,13 +130,31 @@
       <div class="tabla-responsiva">
         <table>
           <thead>
+            <th>
+              Columna 1
+            </th>
+            <th>
+              Columna 2
+            </th>
+            <th>
+              Columna 3
+            </th>
+            <th>
+              Columna 4
+            </th>
+            <th>
+              Columna 5
+            </th>
+            <th>
+              <i class="fa-solid fa-arrows-left-right"></i>
+            </th>
             <tr>
               <td>John Doe</td>
               <td>15-01-2023</td>
               <td>100</td>
               <td>Proveedor 1</td>
               <td>Dato 1</td>
-              <!-- Agrega el dato para la Columna 5 -->
+              <td></td>
             </tr>
             <tr>
               <td>Camilo Cangaro</td>
@@ -211,6 +226,10 @@
         </table>
       </div>
     </div>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/0c5da2f650.js" crossorigin="anonymous"></script>
   </body>
 </html>

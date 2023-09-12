@@ -30,21 +30,22 @@ body {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  align-items: center;
 }
 #filterForm label {
   height: 100%;
   display: flex;
   align-items: center;
   text-align: center;
+  gap: 10px;
 }
 #filterForm button {
   background-color: var(--verde-oscuro);
   border-radius: 3px;
   color: white;
   font-size: 14.5px;
-  padding: 5px 15px;
   border: none;
+  padding: 0 10px;
+  height: 30px;
 }
 
 /* Estilo para reducir los márgenes de los campos de importe */
@@ -85,6 +86,9 @@ body {
   background-color: var(--celeste);
   color: #505050;
 }
+.tabla-responsiva table th:nth-child(6) {
+  max-width: 20px;
+}
 .tabla-responsiva table th,
 .tabla-responsiva table td {
   border: 1px solid #dddddd;
@@ -92,15 +96,6 @@ body {
   padding: 8px;
 }
 
-@media (max-width: 600px) {
-  table {
-    font-size: 12px;
-  }
-  table th,
-  table td {
-    padding: 6px;
-  }
-}
 /*Estilos del filtrar datos */
 .contenedor {
   padding: 20px 50px;
@@ -156,8 +151,21 @@ body {
     margin: 30px 0 10px 0;
   }
   #boton-filtrar button {
+    display: flex;
     padding: 7px 15px;
     width: 40%;
+    align-items: center;
+    justify-content: center;
+  }
+  .tabla-responsiva table {
+    font-size: 12px;
+  }
+  .tabla-responsiva table th,
+  .tabla-responsiva table td {
+    padding: 6px;
+  }
+  .tabla-responsiva table th:nth-child(6) {
+    min-width: 30px;
   }
 }
 
