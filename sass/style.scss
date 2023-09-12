@@ -23,13 +23,13 @@ body {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  align-items: center;
 
   label {
     height: 100%;
     display: flex;
     align-items: center;
     text-align: center;
+    gap: 10px;
   }
 
   button {
@@ -37,8 +37,9 @@ body {
     border-radius: 3px;
     color: white;
     font-size: 14.5px;
-    padding: 5px 15px;
     border: none;
+    padding: 0 10px;
+    height: 30px;
   }
 }
 
@@ -82,22 +83,15 @@ body {
       color: #505050;
     }
 
+    th:nth-child(6) {
+      max-width: 20px;
+    }
+
     th,
     td {
       border: 1px solid #dddddd;
       text-align: left;
       padding: 8px;
-    }
-  }
-}
-
-@media (max-width: 600px) {
-  table {
-    font-size: 12px;
-
-    th,
-    td {
-      padding: 6px;
     }
   }
 }
@@ -121,7 +115,6 @@ body {
       padding: 5px 0;
       font-size: 15px;
       border: none;
-  
     }
   }
 }
@@ -130,7 +123,7 @@ body {
   .contenedor {
     align-items: center;
   }
-  
+
   #filterForm {
     display: grid;
     grid-template-columns: 1fr;
@@ -145,7 +138,7 @@ body {
       justify-items: start;
 
       input {
-        grid-column: span 2 ;
+        grid-column: span 2;
       }
     }
   }
@@ -161,12 +154,30 @@ body {
   #boton-filtrar {
     display: flex;
     width: 100%;
-    justify-content: center ;
+    justify-content: center;
     margin: 30px 0 10px 0;
 
     button {
+      display: flex;
       padding: 7px 15px;
       width: 40%;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .tabla-responsiva {
+    table {
+      font-size: 12px;
+
+      th,
+      td {
+        padding: 6px;
+      }
+
+      th:nth-child(6) {
+        min-width: 30px;
+      }
     }
   }
 }
