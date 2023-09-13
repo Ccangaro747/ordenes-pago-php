@@ -1,176 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Sistema de pago</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Istok+Web&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      href="https://cdn.datatables.net/v/bs5/dt-1.13.6/datatables.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/css/select2.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.datatables.net/v/bs5/dt-1.13.6/datatables.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <link rel="icon" href="/imagenes/logo-2.png" />
-  </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Istok+Web&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.datatables.net/v/bs5/dt-1.13.6/datatables.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/css/select2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" href="/imagenes/logo-2.png">
+    <link href="https://cdn.datatables.net/v/bs5/dt-1.13.6/datatables.min.css" rel="stylesheet">
 
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-      <!-- Inicio del navbar con fondo blanco -->
-      <a class="navbar-brand" href="#"
-        ><img src="./imagenes/logomuni.png" alt="Logo"
-      /></a>
-      <!-- Logo en la esquina superior izquierda -->
+    <style>
+        /* Estilo para centrar el contenido del segundo elemento */
+        #filterForm label #endDate-container input {
+            margin: 0 auto; /* Centrar horizontalmente el input */
+            text-align: center; /* Centrar el texto del input horizontalmente */
+        }
 
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+        #filterForm label #endDate-container select {
+            width: 100%; /* Ajustar el ancho al 100% para llenar la columna */
+            margin: 0 auto; /* Centrar horizontalmente el select */
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <!-- Inicio del navbar con fondo blanco -->
+    <a class="navbar-brand" href="#">
+        <img src="./imagenes/logomuni.png" alt="Logo">
+    </a>
+    <!-- Logo en la esquina superior izquierda -->
+
+    <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+    >
         <span class="navbar-toggler-icon"></span>
         <!-- Botón de hamburguesa para dispositivos móviles -->
-      </button>
+    </button>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse" id="navbarNav">
         <!-- Contenedor de los elementos de navegación -->
         <ul class="navbar-nav ml-auto">
-          <!-- Lista de elementos de navegación (menú) -->
-          <li class="nav-item dropdown">
-            <!-- Elemento de lista para un menú desplegable -->
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <i class="fa fa-user"></i>
-              Nombre de Usuario
-              <!-- Nombre del usuario (texto del enlace) -->
-            </a>
-            <div
-              class="dropdown-menu dropdown-menu-right"
-              aria-labelledby="navbarDropdown"
-            >
-              <!-- Menú desplegable -->
-              <a class="dropdown-item" href="#">Salir</a>
-              <!-- Opción de menú: Salir -->
-              <a class="dropdown-item" href="#">Cambiar Contraseña</a>
-              <!-- Opción de menú: Cambiar Contraseña -->
-            </div>
-          </li>
+            <!-- Lista de elementos de navegación (menú) -->
+            <li class="nav-item dropdown">
+                <!-- Elemento de lista para un menú desplegable -->
+                <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                >
+                    <i class="fa fa-user"></i>
+                    Nombre de Usuario
+                    <!-- Nombre del usuario (texto del enlace) -->
+                </a>
+                <div
+                        class="dropdown-menu dropdown-menu-right"
+                        aria-labelledby="navbarDropdown"
+                >
+                    <!-- Menú desplegable -->
+                    <a class="dropdown-item" href="#">Salir</a>
+                    <!-- Opción de menú: Salir -->
+                    <a class="dropdown-item" href="#">Cambiar Contraseña</a>
+                    <!-- Opción de menú: Cambiar Contraseña -->
+                </div>
+            </li>
         </ul>
-      </div>
-    </nav>
-    <div id="contenedor-filtro">
-      <div class="contenedor-button">
+    </div>
+</nav>
+<div id="contenedor-filtro">
+    <div class="contenedor-button">
         <button id="btn-volver">
-          <i class="fa fa-arrow-left"></i>
-          Volver
+            <i class="fa fa-arrow-left"></i>
+            Volver
         </button>
-      </div>
+    </div>
 
-      <form id="filterForm">
-        <label for="startDate"
-          >Fecha desde:
-          <input type="date" id="startDate" name="startDate" required
-        /></label>
-        <label for="endDate"
-          >Fecha hasta: <input type="date" id="endDate" name="endDate" required
-        /></label>
+    <form id="filterForm">
+        <label for="startDate" id="startDate-container"
+               >Fecha desde:
+            <input type="date" id="startDate" name="startDate" required
+            /></label>
+        <label for="endDate" id="endDate-container"
+               >Fecha hasta: <input type="date" id="endDate" name="endDate" required
+            /></label>
         <label for="amountFrom"
-          >Importe desde:
-          <input type="number" id="amountFrom" name="amountFrom" min="0"
-        /></label>
+               >Importe desde:
+            <input type="number" id="amountFrom" name="amountFrom" min="0"
+            /></label>
         <label for="amountTo"
-          >Importe hasta:
-          <input type="number" id="amountTo" name="amountTo" min="0"
-        /></label>
+               >Importe hasta:
+            <input type="number" id="amountTo" name="amountTo" min="0"
+            /></label>
         <label for="provider"
-          >Proveedor:
-          <select id="provider" name="provider">
-            <option value="proveedor1">Proveedor 1</option>
-            <option value="proveedor2">Proveedor 2</option>
-            <option value="proveedor3">Proveedor 3</option>
-          </select>
+               >Proveedor:
+            <select id="provider" name="provider">
+                <option value="proveedor1">Proveedor 1</option>
+                <option value="proveedor2">Proveedor 2</option>
+                <option value="proveedor3">Proveedor 3</option>
+            </select>
         </label>
         <div id="boton-filtrar">
-          <button type="button" onclick="filterData()">Filtrar</button>
+            <button type="button" onclick="filterData()">Filtrar</button>
         </div>
-      </form>
-    </div>
+    </form>
+</div>
 
-    <div id="filteredData" class="container">
-      <!-- Resultados del filtro -->
-    </div>
-      <div class="tabla-responsiva">
-        <table>
-          <thead>
-            <tr>
-              <th>Columna 1</th>Z
-              <th>Columna 2</th>
-              <th>Columna 3</th>
-              <th>Columna 4</th>
-              <th>Columna 5</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>Jhn Doe</th>
-              <td>15-01-2023</td>
-              <td>100</td>
-              <td>Proveedor 1</td>
-              <td>Dato 1</td>
-              <td>
+<div id="filteredData" class="container">
+    <!-- Resultados del filtro -->
+</div>
+<div class="tabla-responsiva">
+    <table>
+        <thead>
+        <tr>
+            <th>Columna 1</th>
+            <th>Columna 2</th>
+            <th>Columna 3</th>
+            <th>Columna 4</th>
+            <th>Columna 5</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Jhn Doe</td>
+            <td>15-01-2023</td>
+            <td>100</td>
+            <td>Proveedor 1</td>
+            <td>Dato 1</td>
+            <td>
                 <button>
-                  <i class="fa-solid fa-eye"></i>
+                    <i class="fa-solid fa-eye"></i>
                 </button>
-              </td>
-            </tr>
-            <tr>
-              <td>Camilo Cangaro</td>
-              <td>15-01-2020</td>
-              <td>100</td>
-              <td>Proveedor 1</td>
-              <td>Dato 1</td>
-            </tr>
-          </tbody>
+            </td>
+        </tr>
+        <tr>
+            <td>Camilo Cangaro</td>
+            <td>15-01-2020</td>
+            <td>100</td>
+            <td>Proveedor 1</td>
+            <td>Dato 1</td>
+        </tr>
+        </tbody>
 
-          <!-- Más filas de datos aquí -->
-        </table>
-      </div>
-    </div>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="app.js"></script>
-    <script
-      src="https://kit.fontawesome.com/0c5da2f650.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/js/select2.min.js"></script>
-  </body>
+        <!-- Más filas de datos aquí -->
+    </table>
+</div>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!--<script src="app.js"></script>-->
+<script
+        src="https://kit.fontawesome.com/0c5da2f650.js"
+        crossorigin="anonymous"
+></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/js/select2.min.js"></script>
+<script src="https://cdn.datatables.net/v/bs5/dt-1.13.6/datatables.min.js"></script>
+</body>
 </html>

@@ -12,14 +12,10 @@ body {
   flex-direction: column;
 }
 
-.navbar-brand {
-  img {
-    max-height: 55px;
-    width: 100%;
-  }
+.navbar-brand img {
+  max-height: 55px;
+  width: 100%;
 }
-
-//
 
 #contenedor-filtro {
   padding: 20px 50px;
@@ -28,14 +24,15 @@ body {
   width: 100%;
   box-sizing: border-box;
   display: flex;
+  align-items: flex-end;
   flex-direction: column;
 
   .contenedor-button {
-    width: 90%;
+    width: 100%;
 
     button {
       background-color: white;
-      margin: 5px 0;
+      margin: 5px 0 40px 0;
       padding: 5px 0;
       font-size: 15px;
       border: none;
@@ -49,40 +46,52 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-items: end;
+  gap: 20px;
+  width: 100%;
 
   label {
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
-    text-align: center;
-    gap: 10px;
+    justify-content: space-evenly;
+
+    /* Estilo para centrar el contenido del segundo elemento */
+    #endDate-container input {
+      margin: 0 auto; /* Centrar horizontalmente el input */
+      text-align: center; /* Centrar el texto del input horizontalmente */
+    }
+
+    #endDate-container select {
+      width: 100%; /* Ajustar el ancho al 100% para llenar la columna */
+      margin: 0 auto; /* Centrar horizontalmente el select */
+    }
+
+    input {
+      width: 50%;
+    }
+
+    select {
+      width: 50%;
+    }
   }
 
-  button {
-    background-color: var(--verde-oscuro);
-    border-radius: 3px;
-    color: white;
-    font-size: 14.5px;
-    border: none;
-    padding: 5px 20px;
-    height: 30px;
-    
+  #boton-filtrar {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+    button {
+      background-color: var(--verde-oscuro);
+      border-radius: 3px;
+      color: white;
+      font-size: 14.5px;
+      border: none;
+      padding: 5px 20px;
+      height: 30px;
+    }
   }
 }
-
-/* Estilo para reducir los márgenes de los campos de importe */
-#startDate,
-#endDate,
-#amountFrom,
-#amountTo,
-#provider {
-  margin: 1px; /* Ajusta los márgenes según tus preferencias */
-  padding: 1px; /* Ajusta el espacio interno según tus preferencias */
-  width: 130px; /* Ajusta el ancho según tus preferencias */
-  height: 30px; /* Ajusta la altura según tus preferencias */
-}
-
-//
 
 .tabla-responsiva {
   width: 100%;
@@ -104,7 +113,6 @@ body {
     th {
       background-color: rgba(145, 213, 226, .5);
       color: black;
-      
     }
 
     th:nth-child(6) {
@@ -129,8 +137,6 @@ body {
   }
 }
 
-//
-
 @media screen and (max-width: 768px) {
   .contenedor {
     align-items: center;
@@ -139,28 +145,29 @@ body {
   #filterForm {
     display: grid;
     grid-template-columns: 1fr;
-    width: 90%;
+    justify-items: normal;
     gap: 12px;
+
+    #endDate-container:nth-child(2) {
+      justify-content: center;
+    }
 
     label {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      height: 32px;
       font-size: 13px;
       justify-items: start;
 
       input {
-        grid-column: span 2;
+        grid-column: span 1;
+        width: 100%;
+      }
+
+      select {
+        width: 100%;
+        grid-column: span 1;
       }
     }
-  }
-
-  #startDate,
-  #endDate,
-  #amountFrom,
-  #amountTo,
-  #provider {
-    width: 100%;
   }
 
   #boton-filtrar {
@@ -188,3 +195,4 @@ body {
     }
   }
 }
+
