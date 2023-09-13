@@ -32,8 +32,12 @@ body {
   width: 100%;
 }
 
+.dropdown-item i {
+  padding: 0 1px;
+}
+
 #contenedor-filtro {
-  padding: 20px 50px;
+  padding: 20px;
   border: 1px solid #ccc;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -59,7 +63,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-items: end;
-  gap: 20px;
+  gap: 15px;
   width: 100%;
 }
 #filterForm label {
@@ -78,11 +82,10 @@ body {
   width: 100%; /* Ajustar el ancho al 100% para llenar la columna */
   margin: 0 auto; /* Centrar horizontalmente el select */
 }
-#filterForm label input {
+#filterForm label input, #filterForm label select {
   width: 50%;
-}
-#filterForm label select {
-  width: 50%;
+  border-radius: 3px;
+  padding: 5px 7px;
 }
 #filterForm #boton-filtrar {
   width: 100%;
@@ -103,9 +106,8 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-top: 20px;
+  padding: 20px 0;
   position: inherit;
-  bottom: 30px;
   overflow-x: auto;
 }
 .tabla-responsiva table {
