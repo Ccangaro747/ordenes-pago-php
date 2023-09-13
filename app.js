@@ -55,3 +55,4 @@ function filterData() {
 
 // Llama a la función de filtrado inicialmente para mostrar todos los datos
 filterData();
+

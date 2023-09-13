@@ -1,9 +1,15 @@
 :root {
-    --gris: #777372;
-    --verde: #bed630;
-    --verde-agua: #7fcbae;
-    --verde-oscuro: #77bf43;
-    --magenta: #ee5b99;
-    --celeste: #91d5e2;
-    --naranja: #f6921e;
-  }
+  --gris: #777372;
+  --verde: #bed630;
+  --verde-agua: #7fcbae;
+  --verde-oscuro: #77bf43;
+  --magenta: #ee5b99;
+  --celeste: #91d5e2;
+  --naranja: #f6921e;
+}
+
+#menu-desplegable {
+  display: none;
+  /* Oculta el menú inicialmente */
+  /* Agrega estilos adicionales según tus necesidades */
+}

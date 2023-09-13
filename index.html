@@ -84,9 +84,9 @@
         </ul>
       </div>
     </nav>
-    <div class="contenedor">
+    <div id="contenedor-filtro">
       <div class="contenedor-button">
-        <button>
+        <button id="btn-volver">
           <i class="fa fa-arrow-left"></i>
           Volver
         </button>
@@ -125,15 +125,9 @@
     <div id="filteredData" class="container">
       <!-- Resultados del filtro -->
     </div>
-    <div class="container-body">
       <div class="tabla-responsiva">
         <table>
           <thead>
-            <th>columna 1</th>
-            <th>columna 1</th>
-            <th>columna 1</th>
-            <th>columna 1</th>
-            <th>columna 1</th>
             <tr>
               <th>Columna 1</th>
               <th>Columna 2</th>
@@ -145,12 +139,16 @@
           </thead>
           <tbody>
             <tr>
-              <th>Jhn Doe</th>
+              <td>John Doe</td>
               <td>15-01-2023</td>
               <td>100</td>
               <td>Proveedor 1</td>
               <td>Dato 1</td>
-              <td></td>
+              <td>
+                <button>
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </td>
             </tr>
             <tr>
               <td>Camilo Cangaro</td>
@@ -168,7 +166,8 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="app.js"></script>
+    <script src="btn-volver.js"></script>
+    <!-- <script src="app.js"></script> -->
     <script
       src="https://kit.fontawesome.com/0c5da2f650.js"
       crossorigin="anonymous"
