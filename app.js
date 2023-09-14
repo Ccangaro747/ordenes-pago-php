@@ -1,3 +1,4 @@
+new DataTable('#example');
 
 // Define un arreglo de datos para la "Columna 5"
 const columna5Data = [
@@ -55,4 +56,5 @@ function filterData() {
 
 // Llama a la función de filtrado inicialmente para mostrar todos los datos
 filterData();
+
 
