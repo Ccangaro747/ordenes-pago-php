@@ -12,66 +12,103 @@ body {
   flex-direction: column;
 }
 
-.navbar-brand {
+nav {
+  padding: 20px !important;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
   img {
     max-height: 55px;
     width: 100%;
   }
-}
 
-#filterForm {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-
-  label {
-    height: 100%;
+  .navbar-collapse {
     display: flex;
-    align-items: center;
-    text-align: center;
-    gap: 10px;
+    justify-content: flex-end;
   }
 
-  button {
-    background-color: var(--verde-oscuro);
-    border-radius: 3px;
-    color: white;
-    font-size: 14.5px;
-    border: none;
-    padding: 0 10px;
-    height: 30px;
+  .navbar-nav {
+    padding-right: 20px;
+    text-align: end;
+    gap: 20px;
   }
 }
 
-/* Estilo para reducir los márgenes de los campos de importe */
-#startDate,
-#endDate,
-#amountFrom,
-#amountTo,
-#provider {
-  margin: 1px; /* Ajusta los márgenes según tus preferencias */
-  padding: 1px; /* Ajusta el espacio interno según tus preferencias */
-  width: 130px; /* Ajusta el ancho según tus preferencias */
-  height: 30px; /* Ajusta la altura según tus preferencias */
+.dropdown-item {
+  i {
+    padding: 0 1px;
+  }
 }
 
-.container-body {
+.container-form {
+  margin: 20px 0;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  justify-content: center;
+
+  #filterForm {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+    width: 90%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-items: end;
+
+    label {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      /* Estilo para centrar el contenido del segundo elemento */
+      #endDate-container input {
+        margin: 0 auto; /* Centrar horizontalmente el input */
+        text-align: center; /* Centrar el texto del input horizontalmente */
+      }
+
+      #endDate-container select {
+        width: 100%; /* Ajustar el ancho al 100% para llenar la columna */
+        margin: 0 auto; /* Centrar horizontalmente el select */
+      }
+
+      input,
+      select {
+        width: 50%;
+        border-radius: 3px;
+        padding: 5px 7px;
+      }
+    }
+
+    #boton-filtrar {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+
+      button {
+        background-color: var(--verde-oscuro);
+        border-radius: 3px;
+        color: white;
+        font-size: 14.5px;
+        border: none;
+        padding: 5px 20px;
+        height: 30px;
+      }
+    }
+  }
 }
 
-.tabla-responsiva {
+.container-grilla {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-top: 20px;
+  margin: 20px 0;
   position: inherit;
-  bottom: 30px;
   overflow-x: auto;
 
   table {
-    width: 95%;
+    width: 95% !important;
     border-collapse: collapse;
 
     tr:nth-child(even) {
@@ -79,42 +116,28 @@ body {
     }
 
     th {
-      background-color: var(--celeste);
-      color: #505050;
+      background-color: rgba(145, 213, 226, 0.5);
+      color: black;
     }
 
     th:nth-child(6) {
-      max-width: 20px;
+      min-width: 2px;
+    }
+
+    td {
+      button {
+        border: none;
+        background-color: transparent;
+        margin: 0;
+        padding: 0;
+      }
     }
 
     th,
     td {
       border: 1px solid #dddddd;
-      text-align: left;
-      padding: 8px;
-    }
-  }
-}
-
-/*Estilos del filtrar datos */
-.contenedor {
-  padding: 20px 50px;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-
-  .contenedor-button {
-    width: 90%;
-
-    button {
-      background-color: white;
-      margin: 5px 0;
-      padding: 5px 0;
-      font-size: 15px;
-      border: none;
+      text-align: center;
+      padding: 6px;
     }
   }
 }
@@ -127,28 +150,25 @@ body {
   #filterForm {
     display: grid;
     grid-template-columns: 1fr;
-    width: 90%;
+    justify-items: normal;
     gap: 12px;
 
     label {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      height: 32px;
       font-size: 13px;
       justify-items: start;
 
       input {
-        grid-column: span 2;
+        grid-column: span 1;
+        width: 100%;
+      }
+
+      select {
+        width: 100%;
+        grid-column: span 1;
       }
     }
-  }
-
-  #startDate,
-  #endDate,
-  #amountFrom,
-  #amountTo,
-  #provider {
-    width: 100%;
   }
 
   #boton-filtrar {
@@ -170,14 +190,17 @@ body {
     table {
       font-size: 12px;
 
-      th,
-      td {
-        padding: 6px;
-      }
-
       th:nth-child(6) {
         min-width: 30px;
       }
+    }
+  }
+}
+
+.table_id_filter {
+  label {
+    #text {
+      visibility: hidden;
     }
   }
 }
