@@ -25,26 +25,34 @@
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-        <img src="/imagenes/logomuni.png" alt="Logo Municipalidad">
-      </a>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Cambiar Contraseña</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Cerrar Sesión</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+        <a class="navbar-brand" href="#">
+          <img src="/imagenes/logomuni.png" alt="Logo Municipalidad" />
+        </a>
+        <!-- Botón del menú hamburguesa -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Cambiar Contraseña</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Cerrar Sesión</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
-    <div id="contenedor-filtro">
-      <div class="contenedor-button">
-        <button id="btn-volver"><i class="fa fa-arrow-left"></i> Volver</button>
-      </div>
-
+    <div class="container-form">
       <form id="filterForm">
         <label for="startDate" id="startDate-container"
           >Fecha desde:
@@ -75,7 +83,7 @@
       </form>
     </div>
 
-    <div class="container">
+    <div class="container-grilla">
       <table
         id="example"
         class="display nowrap dataTable dtr-inline collapsed"
@@ -84,7 +92,7 @@
         <thead>
           <tr>
             <th>Nombre</th>
-            <th>Pocisión</th>
+            <th>Posición</th>
             <th>Oficio</th>
             <th>Edad</th>
             <th>Fecha de inicio</th>
@@ -110,7 +118,6 @@
       src="https://kit.fontawesome.com/0c5da2f650.js"
       crossorigin="anonymous"
     ></script>
-    
 
     <!-- DataTables Personalizado -->
     <script src="DataTables/datatables.min.js"></script>
