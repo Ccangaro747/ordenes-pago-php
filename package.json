@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "datatables.net-dt": "^1.13.6"
+    "datatables.net-dt": "^1.13.6",
+    "datatables.net-responsive-dt": "^2.5.0"
   }
 }
