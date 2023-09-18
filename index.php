@@ -130,10 +130,6 @@
 
     <div id="contenedor-filtro">
       <div class="contenedor-button">
-        <button id="btn-volver">
-          <i class="fa fa-arrow-left"></i>
-          Volver
-        </button>
       </div>
       <h2> <?php echo $_SESSION["entinom"];?></h2>
       <form id="filterForm" action="procesar_filtro.php" method="post">
