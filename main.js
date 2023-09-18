@@ -1,23 +1,21 @@
-let dataTable;
-let dataTableIsInitialized = false;
+// main.js
 
 const dataTableOptions = {
-    //scrollX: "2000px",
+    // Opciones de DataTables
     lengthMenu: [5, 10, 15, 20, 100, 200, 500],
     columnDefs: [
         { className: "centered", targets: [0, 1, 2, 3, 4, 5, 6] },
         { orderable: false, targets: [5, 6] },
         { searchable: false, targets: [1] }
-        //{ width: "50%", targets: [0] }
     ],
     pageLength: 3,
     destroy: true,
     language: {
         lengthMenu: "Mostrar _MENU_ registros por página",
-        zeroRecords: "Ningún usuario encontrado",
-        info: "Mostrando de _START_ a _END_ de un total de _TOTAL_ registros",
-        infoEmpty: "Ningún usuario encontrado",
-        infoFiltered: "(filtrados desde _MAX_ registros totales)",
+        zeroRecords: "Ninguna orden encontrada",
+        info: "Mostrando de _START_ a _END_ de un total de _TOTAL_ órdenes",
+        infoEmpty: "Ninguna orden encontrada",
+        infoFiltered: "(filtrados desde _MAX_ órdenes totales)",
         search: "Buscar:",
         loadingRecords: "Cargando...",
         paginate: {
@@ -34,41 +32,47 @@ const initDataTable = async () => {
         dataTable.destroy();
     }
 
-    await listUsers();
+    await listOrders();
 
     dataTable = $("#datatable_users").DataTable(dataTableOptions);
 
     dataTableIsInitialized = true;
 };
 
-const listUsers = async () => {
+const listOrders = async () => {
     try {
-        const response = await fetch("https://jsonplaceholder.typicode.com/users");
-        const users = await response.json();
+        // Realiza una solicitud AJAX para obtener los datos de las órdenes
+        const response = await fetch("obtener_ordenes.php"); // Reemplaza "obtener_ordenes.php" por tu archivo PHP real
+        const ordenes = await response.json();
 
         let content = ``;
-        users.forEach((user, index) => {
+        ordenes.forEach((orden, index) => {
             content += `
                 <tr>
                     <td>${index + 1}</td>
-                    <td>${user.name}</td>
-                    <td>${user.email}</td>
-                    <td>${user.address.city}</td>
-                    <td>${user.company.name}</td>
-                    <td><i class="fa-solid fa-check" style="color: green;"></i></td>
-                    <td>
-                        <button class="btn btn-sm btn-primary"><i class="fa-solid fa-pencil"></i></button>
-                        <button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></button>
-                    </td>
+                    <td>${orden.nro_op}</td>
+                    <td>${orden.fech_op}</td>
+                    <td>${orden.razon_social}</td>
+                    <td>${orden.importe_total}</td>
+                    <td>${orden.concepto}</td>
+                    <td><button class="btn btn-sm btn-info">Ver</button></td>
                 </tr>`;
         });
-        tableBody_users.innerHTML = content;
+
+        // Utiliza el ID "datatable_users" para seleccionar la tabla en el HTML
+        const table = $("#datatable_users");
+        const tableBody = table.find("tbody"); // Busca el cuerpo de la tabla
+
+        // Limpia el contenido actual y agrega el nuevo contenido
+        tableBody.empty().append(content);
     } catch (ex) {
         alert(ex);
     }
 };
 
+let dataTable;
+let dataTableIsInitialized = false;
+
 window.addEventListener("load", async () => {
     await initDataTable();
 });
-
