@@ -103,36 +103,51 @@
         </div>
     </nav>
 
-    <h2> <?php echo $_SESSION["entinom"];?></h2>
-
-    <div class="container-form">
-        <form id="filterForm" action="procesar_filtro.php" method="post">
-            <label for="startDate">Fecha desde:
-                <input type="date" id="startDate" name="desde" value="<?= $_SESSION['desde'] ?>" required>
-            </label>
-            <label for="endDate">Fecha hasta:
-                <input type="date" id="endDate" name="hasta" value="<?= $_SESSION['hasta'] ?>" required>
-            </label>
-            <label for="amountFrom">Importe desde:
-                <input type="number" id="amountFrom" name="importedesde" min="0" value="<?= $_SESSION['importedesde'] ?>">
-            </label>
-            <label for="amountTo">Importe hasta:
-                <input type="number" id="amountTo" name="importehasta" min="0" value="<?= $_SESSION['importehasta'] ?>">
-            </label>
-            <label for="provider">Proveedor:
-                <select id="provider" name="proveedor">
-                    <option value="0">- TODOS LOS PROVEEDORES --</option>
-                    <?php while ($prov = mysqli_fetch_array($proveedores)) : ?>
-                        <option value="<?= $prov['cod_prov'] ?>" <?= ($prov['cod_prov'] == $_SESSION['proveedor']) ? 'selected' : '' ?>>
-                            <?= $prov['nombre'] ?>
-                        </option>
-                    <?php endwhile; ?>
-                </select>
-            </label>
-            <div id="boton-filtrar">
-                <button type="submit">Filtrar</button>
-            </div>
-        </form>
+    <div id="contenedor-filtro">
+      <div class="contenedor-button">
+        <button id="btn-volver">
+          <i class="fa fa-arrow-left"></i>
+          Volver
+        </button>
+      </div>
+      <h2> <?php echo $_SESSION["entinom"];?></h2>
+      <form id="filterForm" action="procesar_filtro.php" method="post">
+        <label for="startDate" id="startDate-container"
+          >Fecha desde:
+          <input type="date" id="startDate" name="desde" value="<?php echo $_SESSION['desde'];?>" required
+        /></label>
+        <label for="endDate" id="endDate-container"
+          >Fecha hasta: <input type="date" id="endDate" name="hasta" value="<?php echo $_SESSION['hasta'];?>" required
+        /></label>
+        <label for="amountFrom"
+          >Importe desde:
+          <input type="number" id="amountFrom" name="importedesde" min="0" value="<?php echo $_SESSION['importedesde'];?>"
+        /></label>
+        <label for="amountTo"
+          >Importe hasta:
+          <input type="number" id="amountTo" name="importehasta" min="0" value="<?php echo $_SESSION['importehasta'];?>"
+        /></label>
+        <label for="provider"
+          >Proveedor:
+          <select id="provider" name="proveedor">            
+            <option value="0" > - TODOS LOS PROVEEDORES --</option>            
+            <?php //Recorro toda la consulta obtenida 
+              while ($prov = mysqli_fetch_array($proveedores)) {
+                // Pongo como value el codigo de proveedor, como texto a mostrar el nombre del proveedor  ?>
+                <option value="<?php echo $prov['cod_prov'];?>" 
+                   <?php // Aca me fijo si el nro de proveedor coincide con el proveedor del filtro, lo muestro como seleccionado
+                       if($prov['cod_prov'] == $_SESSION["proveedor"]) {
+                            echo 'selected';
+                     } ?>
+                >
+                <?php echo $prov['nombre'];?></option>
+            <?php }?>
+          </select>
+        </label>
+        <div id="boton-filtrar">
+          <button type="submit">Filtrar</button>
+        </div>
+      </form>
     </div>
 
     <div class="container my-4">
