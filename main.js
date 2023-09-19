@@ -12,10 +12,10 @@ const dataTableOptions = {
     destroy: true,
     language: {
         lengthMenu: "Mostrar _MENU_ registros por página",
-        zeroRecords: "Ninguna orden encontrada",
-        info: "Mostrando de _START_ a _END_ de un total de _TOTAL_ órdenes",
-        infoEmpty: "Ninguna orden encontrada",
-        infoFiltered: "(filtrados desde _MAX_ órdenes totales)",
+        zeroRecords: "Ningún usuario encontrado",
+        info: "Mostrando de _START_ a _END_ de un total de _TOTAL_ registros",
+        infoEmpty: "Ningún usuario encontrado",
+        infoFiltered: "(filtrados desde _MAX_ registros totales)",
         search: "Buscar:",
         loadingRecords: "Cargando...",
         paginate: {
@@ -32,7 +32,7 @@ const initDataTable = async () => {
         dataTable.destroy();
     }
 
-    await listOrders();
+    await listOrders(); // Cambia listUsers a listOrders
 
     dataTable = $("#datatable_users").DataTable(dataTableOptions);
 
